@@ -4,6 +4,8 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 
 import java.text.DateFormat;
+import java.time.LocalDate;
+import java.time.Period;
 
 public class RegistraceForm {
     @NotBlank
@@ -11,7 +13,7 @@ public class RegistraceForm {
     @NotBlank
     private String prijmeni;
     @NotBlank
-    private DateFormat datumNarozeni;
+    private LocalDate datumNarozeni;
     @NotBlank
     private String pohlavi;
     @NotBlank
@@ -36,11 +38,11 @@ public class RegistraceForm {
         this.prijmeni = prijmeni;
     }
 
-    public DateFormat getDatumNarozeni() {
+    public LocalDate getDatumNarozeni() {
         return datumNarozeni;
     }
 
-    public void setDatumNarozeni(DateFormat datumNarozeni) {
+    public void setDatumNarozeni(LocalDate datumNarozeni) {
         this.datumNarozeni = datumNarozeni;
     }
 

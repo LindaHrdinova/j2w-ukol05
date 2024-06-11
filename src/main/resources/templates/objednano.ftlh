@@ -11,15 +11,15 @@
 <body>
 <main>
     <h1>Rekapitulace registrace</h1>
-    <div>Jméno: ${name} ${surname}</div>
-    <div>Datum narození: ${birthday}</div>
-    <div>Pohlaví: ${gender}</div>
-    <div>Turnus: ${turnus}</div>
+    <div>Jméno: ${jmeno} ${prijmeni}</div>
+    <div>Datum narození: ${datumNarozeni}</div>
+    <div>Pohlaví: ${pohlavi}</div>
+    <div>Turnus: ${turnusKod}</div>
     [#if parentEmail ??]
-        <div>Email rodiče: ${parentEmail}</div>
+        <div>Email rodiče: ${emailRodice}</div>
     [/#if]
     [#if parentPhone ??]
-        <div>Telefon rodiče: ${parentPhone}</div>
+        <div>Telefon rodiče: ${telefonRodice}</div>
     [/#if]
 </main>
 </body>
