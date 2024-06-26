@@ -15,11 +15,11 @@
     <div><strong>Datum narození:</strong> ${datumNarozeni?date}</div>
     <div><strong>Pohlaví:</strong> ${pohlavi}</div>
     <div><strong>Turnus:</strong> ${turnusKod}</div>
-    [#if parentEmail ??]
-        <div>Email rodiče: ${emailRodice}</div>
+    [#if emailRodice??]
+        <div><strong>Email rodiče:</strong> ${emailRodice}</div>
     [/#if]
-    [#if parentPhone ??]
-        <div>Telefon rodiče: ${telefonRodice}</div>
+    [#if telefonRodice??]
+        <div><strong>Telefon rodiče:</strong> ${telefonRodice}</div>
     [/#if]
 </main>
 </body>

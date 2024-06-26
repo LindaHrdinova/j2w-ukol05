@@ -94,13 +94,15 @@
         <div class="row mb-3">
             <label for="emailRodice" class="col-sm-2 col-form-label">E-mail rodiče</label>
             <div class="col-sm-10">
-                <input type="email" class="form-control" id="emailRodice">
+                [@spring.formInput path="form.emailRodice" /]
+                <div class="error">[@spring.showErrors "<br>"/]</div>
             </div>
         </div>
         <div class="row mb-3">
             <label for="telefonRodice" class="col-sm-2 col-form-label">Telefon rodiče</label>
             <div class="col-sm-10">
-                <input type="tel" class="form-control" id="telefonRodice">
+                [@spring.formInput path="form.telefonRodice" /]
+                <div class="error">[@spring.showErrors "<br>"/]</div>
             </div>
         </div>
         <p>* Položky označené hvězdičkou jsou povinné</p>

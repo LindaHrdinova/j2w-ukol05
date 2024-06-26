@@ -15,7 +15,6 @@ public class RegistraceForm {
     private String prijmeni;
     @NotNull
     private LocalDate datumNarozeni;
-
     @NotBlank
     private String pohlavi;
     @NotBlank
