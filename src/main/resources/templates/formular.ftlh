@@ -12,7 +12,7 @@
 <body>
 <main>
     <h1>Registrace na letní dětský tábor</h1>
-    <form>
+    <form method="post" action="/">
         <div class="row mb-3">
             <label for="jmeno" class="col-sm-2 col-form-label">Jméno *</label>
             <div class="col-sm-10">
@@ -34,7 +34,8 @@
         <div class="row mb-3">
             <label for="datumNarozeni" class="col-sm-2 col-form-label">Datum narození *</label>
             <div class="col-sm-10">
-                <input type="date" class="form-control" id="datumNarozeni">
+                [@spring.formInput fieldType="date" path="form.datumNarozeni"/]
+                <div class="error">[@spring.showErrors "<br>"/]</div>
             </div>
         </div>
 
@@ -43,14 +44,14 @@
             <div class="col-sm-10">
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="pohlavi" id="pohlaviDevce"
-                           value="pohlaviDevce"
+                           value="děvče"
                            checked>
                     <label class="form-check-label" for="pohlaviDevce">
                         Děvče
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="pohlavi" id="pohlaviChlapec" value="pohlaviChlapec">
+                    <input class="form-check-input" type="radio" name="pohlavi" id="pohlaviChlapec" value="chlapec">
                     <label class="form-check-label" for="pohlaviChlapec">
                         Chlapec
                     </label>
@@ -65,7 +66,7 @@
             <div class="col-sm-10">
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="turnusKod" id="turnusKod07_5-11"
-                           value="turnus07_5-11"
+                           value="5.-11.7."
                            checked>
                     <label class="form-check-label" for="turnusKod07_5-11">
                         5. - 11. července
@@ -73,14 +74,14 @@
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="turnusKod" id="turnusKod07_12-18"
-                           value="turnus07_12-18">
+                           value="12.-18.7.">
                     <label class="form-check-label" for="turnusKod07_12-18">
                         12. - 18. července
                     </label>
                 </div>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="turnusKod" id="turnusKod07_19-25"
-                           value="turnus07_19-25">
+                           value="19.-25.7.">
                     <label class="form-check-label" for="turnusKod07_19-25">
                         19. - 25. července
                     </label>
@@ -99,7 +100,7 @@
         <div class="row mb-3">
             <label for="telefonRodice" class="col-sm-2 col-form-label">Telefon rodiče</label>
             <div class="col-sm-10">
-                <input type="email" class="form-control" id="telefonRodice">
+                <input type="tel" class="form-control" id="telefonRodice">
             </div>
         </div>
         <p>* Položky označené hvězdičkou jsou povinné</p>

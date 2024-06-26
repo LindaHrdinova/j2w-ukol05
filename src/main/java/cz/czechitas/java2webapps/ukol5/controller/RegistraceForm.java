@@ -2,6 +2,7 @@ package cz.czechitas.java2webapps.ukol5.controller;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 import java.text.DateFormat;
 import java.time.LocalDate;
@@ -12,8 +13,9 @@ public class RegistraceForm {
     private String jmeno;
     @NotBlank
     private String prijmeni;
-    @NotBlank
+    @NotNull
     private LocalDate datumNarozeni;
+
     @NotBlank
     private String pohlavi;
     @NotBlank
@@ -21,6 +23,8 @@ public class RegistraceForm {
     @Email
     private String emailRodice;
     private String telefonRodice;
+
+    private int age;
 
     public String getJmeno() {
         return jmeno;
@@ -76,5 +80,15 @@ public class RegistraceForm {
 
     public void setTelefonRodice(String telefonRodice) {
         this.telefonRodice = telefonRodice;
+    }
+
+    public int getAge() {
+        LocalDate birthDate = getDatumNarozeni();
+        if (birthDate != null) {
+            Period period = birthDate.until(LocalDate.now());
+            return period.getYears();
+        } else {
+            return 0;
+        }
     }
 }

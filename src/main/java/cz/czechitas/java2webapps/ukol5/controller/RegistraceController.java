@@ -22,11 +22,6 @@ import java.time.Period;
 @RequestMapping("/")
 public class RegistraceController {
 
-    /* @GetMapping("/")
-    public String formular() {
-        return "formular";
-    } */
-
     @GetMapping("/")
     public ModelAndView index() {
         ModelAndView modelAndView = new ModelAndView("/formular"); // cesta k /formular.ftlh
@@ -37,14 +32,10 @@ public class RegistraceController {
     @PostMapping("/") // cesta v prohližeči
     public Object form(@Valid @ModelAttribute("form") RegistraceForm form, BindingResult bindingResult) {
 
-        Period period = form.getDatumNarozeni().until(LocalDate.now());
-        @Min(9)
-        @Max(15)
-        int vek = period.getYears();
-
-        System.out.println("datum narozeni: " + form.getDatumNarozeni() + "vek: " + vek);
-
-        // bindingResult.addError(vek < 9 || vek > 15);
+        final int age = form.getAge();
+        if(age < 9 || age > 16) {
+            bindingResult.rejectValue("datumNarozeni", null, "Věk účastníka musí být mezi 9 a 15 lety.");
+        }
 
         if (bindingResult.hasErrors()) {
             return "/formular";
